@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 SEQCLASSIFICATION = "seq-classification"
 MULTICHOICECLASSIFICATION = "multichoice-classification"
 TOKENCLASSIFICATION = "token-classification"
+IMAGECLASSIFICATION = "image_classification"
 
 SEQREGRESSION = "seq-regression"
 
@@ -34,6 +35,7 @@ CLASSIFICATION = (
     MULTICHOICECLASSIFICATION,
     TOKENCLASSIFICATION,
     TS_FORECASTCLASSIFICATION,
+    IMAGECLASSIFICATION,
 )
 RANK = ("rank",)
 SUMMARIZATION = "summarization"
@@ -320,6 +322,9 @@ class Task(ABC):
 
     def is_regression(self) -> bool:
         return self.name in REGRESSION
+    
+    def is_image_classification(self) -> bool:
+        return self.name == IMAGECLASSIFICATION
 
     def __eq__(self, other: str) -> bool:
         """For backward compatibility with all the string comparisons to task"""

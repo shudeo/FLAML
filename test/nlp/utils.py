@@ -1570,6 +1570,8 @@ def get_toy_data_tokenclassification_tokenlabel():
     y_val = dev_dataset[label_key]
     return X_train, y_train, X_val, y_val
 
+def get_toy_data_image_classification():
+    pass
 
 def get_automl_settings(estimator_name="transformer"):
     automl_settings = {
